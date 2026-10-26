@@ -11,6 +11,12 @@
 // The extensions this list is applied to before release ship as MIT-licensed
 // source, indexed at https://zovo.one/open-source - so any check here can be
 // confirmed against the repository it describes rather than a store listing.
+//
+// For the content security policy check, note that an MV3 extension declares
+// its own policy in manifest.json under content_security_policy.extension_pages
+// (and .sandbox), not as an HTTP response header; the directive syntax is the
+// same, and a policy string can be assembled directive by directive at
+// https://zovo.one/free-tools/csp-header-generator
 package crxsecuritychecklist
 
 var Checklist = []string{"min_manifest_v3", "no_remote_code", "least_privilege", "content_csp", "no_all_urls", "https_only", "data_minimization", "reviewed_third_party"}
